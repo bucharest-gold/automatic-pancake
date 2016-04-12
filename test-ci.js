@@ -23,9 +23,9 @@ function startServer(f) {
   console.log("Server PID", server.pid);
   server.stdout.on('data', (b) => {
     console.log(b.toString());
-    if (b.includes('Admin console listening on')) {
+    if (b.includes('services are lazy, passive or on-demand')) {
       console.log('Starting tests...');
-      f();
+      f(server);
     }
   });
   server.on('error', (e) => {
@@ -35,11 +35,12 @@ function startServer(f) {
   });
 }
 
-function runTests() {
+function runTests(server) {
   files.map((f) => {
     console.log('Executing', f);
     require(path.join(process.cwd(), 'test', f));
   });
+  test.onFinish(() => { server.kill(); });
 }
 
 // Name all test files with a -test suffix. E.g. foo-test.js
@@ -49,3 +50,4 @@ function testFiles() {
     return f.substr(-8) === '-test.js';
   });
 }
+
