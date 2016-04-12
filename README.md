@@ -13,6 +13,8 @@ Focus on ES6 features.
 
 ### All tasks - local development:
 
+_keycloak running on port 8080 is required_
+
 ```
 make
 ```
@@ -31,6 +33,14 @@ npm test
 npm run coverage
 ```
 
-### CI
+### CI:
 
 CI will use node instead Makefile.
+
+### Simulating CI tests locally: 
+
+_keycloak on current directory is required_
+
+```
+node test-ci.js
+```
