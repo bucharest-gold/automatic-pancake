@@ -17,9 +17,8 @@ const test = require('tape'),
 startServer(runTests);
 
 function startServer(f) {
-  //const server = spawn('java', ['-jar','-Djava.net.preferIPv4Stack=true','keycloak-1.0.0.Alpha8-swarm.jar'], { stdio: ['ignore', null, null] });
-  const server = spawn('java', ['-jar', 'keycloak-1.0.0.Beta7-swarm.jar'], { stdio: ['ignore', null, null] });
-
+  const server = spawn('java', ['-jar','-Djava.net.preferIPv4Stack=true','keycloak-1.0.0.Beta7-swarm.jar'], { stdio: ['ignore', null, null] });
+  
   console.log("Server PID", server.pid);
   server.stdout.on('data', (b) => {
     console.log(b.toString());

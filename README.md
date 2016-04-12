@@ -1,5 +1,7 @@
 # automatic-pancake
 
+[![Build Status](https://travis-ci.org/bucharest-gold/automatic-pancake.svg?branch=master)](https://travis-ci.org/bucharest-gold/automatic-pancake)
+
 Focus on ES6 features.
 
 **travis:**

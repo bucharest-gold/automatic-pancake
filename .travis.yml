@@ -14,6 +14,5 @@ language: node_js
 node_js:
   - "5"
 before_install:
-   - wget http://downloads.jboss.org/keycloak/1.9.1.Final/keycloak-1.9.1.Final.tar.gz
-   - tar -xvf keycloak-1.9.1.Final.tar.gz
+   - wget https://repo1.maven.org/maven2/org/wildfly/swarm/servers/keycloak/1.0.0.Beta7/keycloak-1.0.0.Beta7-swarm.jar
 script: node test-ci.js
