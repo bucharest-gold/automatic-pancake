@@ -1,2 +1,27 @@
 # automatic-pancake
-CI tests with keycloak and travis.
+
+
+### All tasks - local development:
+
+```
+make
+```
+
+### Individual tasks - local development:
+
+```
+npm run lint
+```
+
+```
+npm test
+```
+
+```
+npm run coverage
+```
+
+### CI
+
+CI will run only npm test
+
