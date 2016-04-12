@@ -18,8 +18,8 @@ startServer(runTests);
 
 function startServer(f) {
   //const server = spawn('java', ['-jar','-Djava.net.preferIPv4Stack=true','keycloak-1.0.0.Alpha8-swarm.jar'], { stdio: ['ignore', null, null] });
-  const server = spawn('sh', ['keycloak-1.9.1.Final/bin/standalone.sh'], { stdio: ['ignore', null, null] });
-  
+  const server = spawn('java', ['-jar', 'keycloak-1.0.0.Beta7-swarm.jar'], { stdio: ['ignore', null, null] });
+
   console.log("Server PID", server.pid);
   server.stdout.on('data', (b) => {
     console.log(b.toString());
@@ -40,7 +40,13 @@ function runTests(server) {
     console.log('Executing', f);
     require(path.join(process.cwd(), 'test', f));
   });
-  test.onFinish(() => { server.kill(); });
+  test.onFinish(() => {
+
+    setTimeout(() => {
+      server.kill();
+    }, 5000);
+
+  });
 }
 
 // Name all test files with a -test suffix. E.g. foo-test.js
