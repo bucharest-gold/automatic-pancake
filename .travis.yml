@@ -1,0 +1,19 @@
+# Current steps :
+
+# 1. upgrade distro      [ok]
+# 2. install node        [ok]
+# 3. wget kc-latest      [ok]
+# 4. node test-ci.js     [ok]
+# 6. kc-latest started   [ok]
+# 7. tests executed      [ok]
+# 8. server not finished [non-ok] 
+
+sudo: required
+dist: trusty
+language: node_js
+node_js:
+  - "5"
+before_install:
+   - wget http://downloads.jboss.org/keycloak/1.9.1.Final/keycloak-1.9.1.Final.tar.gz
+   - tar -xvf keycloak-1.9.1.Final.tar.gz
+script: node test-ci.js
