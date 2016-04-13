@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "jshint *.js lib/*.js test/**/*.js",
-    "test": "tape test/**/*.js",
+    "test": "node --harmony_default_parameters test-ci.js",
     "coverage": "istanbul cover tape -- test/**/**.js"
   },
   "repository": {

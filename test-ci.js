@@ -7,8 +7,7 @@
 const test = require('tape'),
   spawn = require('child_process').spawn,
   path = require('path'),
-  fs = require('fs'),
-  files = testFiles();
+  fs = require('fs');
 
 // Uncomment this for local development
 // runTests();
@@ -36,14 +35,12 @@ function startServer(f) {
 
 function runTests(server) {
 
-  var p = Promise.all(files.map((f) => {
-    return Promise.resolve(require(path.join(process.cwd(), 'test', f)));
-  }));
-  
-  p.then(()=> {
-     server.kill();  
+  Promise.all(testFiles().map((f) => {
+    return Promise.resolve(require(path.join(process.cwd(), 'test', f))());
+  })).then(()=> {
+    console.log("Killing server");
+    server.kill();  
   });
-
 }
 
 // Name all test files with a -test suffix. E.g. foo-test.js
