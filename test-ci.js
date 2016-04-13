@@ -36,12 +36,12 @@ function startServer(f) {
 
 function runTests(server) {
 
-  const promises = []; 
-  files.map((f) => { promises.push(require(path.join(process.cwd(), 'test', f))()); });
-
-  Promise.all(promises)
-  .then(() => {
-      server.kill();
+  var p = Promise.all(files.map((f) => {
+    return Promise.resolve(require(path.join(process.cwd(), 'test', f)));
+  }));
+  
+  p.then(()=> {
+     server.kill();  
   });
 
 }
