@@ -41,9 +41,9 @@ function runTests(server) {
   });
   test.onFinish(() => {
 
-    setTimeout(() => {
-      server.kill();
-    }, 5000);
+    // setTimeout(() => {
+    //   server.kill();
+    // }, 5000);
 
   });
 }
