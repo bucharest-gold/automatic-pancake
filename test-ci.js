@@ -17,8 +17,8 @@ const test = require('tape'),
 startServer(runTests);
 
 function startServer(f) {
-  const server = spawn('java', ['-jar','-Djava.net.preferIPv4Stack=true','keycloak-1.0.0.Beta7-swarm.jar'], { stdio: ['ignore', null, null] });
-  
+  const server = spawn('java', ['-jar', '-Djava.net.preferIPv4Stack=true', 'keycloak-1.0.0.Beta7-swarm.jar'], { stdio: ['ignore', null, null] });
+
   console.log("Server PID", server.pid);
   server.stdout.on('data', (b) => {
     console.log(b.toString());
@@ -35,24 +35,20 @@ function startServer(f) {
 }
 
 function runTests(server) {
-  files.map((f) => {
-    console.log('Executing', f);
-    require(path.join(process.cwd(), 'test', f));
-  });
-  test.onFinish(() => {
 
-    // setTimeout(() => {
-    //   server.kill();
-    // }, 5000);
+  const promises = []; 
+  files.map((f) => { promises.push(require(path.join(process.cwd(), 'test', f))()); });
 
+  Promise.all(promises)
+  .then(() => {
+      server.kill();
   });
+
 }
 
 // Name all test files with a -test suffix. E.g. foo-test.js
 function testFiles() {
   let files = fs.readdirSync('./test');
-  return files.filter((f) => {
-    return f.substr(-8) === '-test.js';
-  });
+  return files.filter((f) => f.substr(-8) === '-test.js');
 }
 
