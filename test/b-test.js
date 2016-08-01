@@ -1,20 +1,18 @@
-/* jslint esversion: 6 */
-/* jshint node: true   */
-
 'use strict';
 
-let test = require('tape');
-let b = require('../lib/b');
+const test = require('tape');
+const b = require('../lib/b');
 
-test('B should b', (expect) => {
-  b('http://localhost:8080/auth/')
-    .then((data) => {
-      expect.equal(data.indexOf('Welcome to Keycloak') > 0, true);
-      expect.end();
+test('B should b', t => {
+  b('http://localhost:8080/apiman')
+    .then(x => {
+      console.log(x);
+      t.equal(JSON.parse(x).name, 'API Manager REST API');
+      t.end();
     })
-    .catch((error) => {
-      console.log("ERROR ----> ", error);
-      expect.fail();
+    .catch(e => {
+      console.log("ERROR ----> ", e);
+      t.fail();
     });
 });
 

@@ -1,18 +1,6 @@
-# Current steps :
-
-# 1. upgrade distro      [ok]
-# 2. install node        [ok]
-# 3. wget kc-swarm       [ok]
-# 4. node test-ci.js     [ok]
-# 6. kc-swarm started    [ok]
-# 7. tests executed      [ok]
-# 8. kc-swarm finished   [ok] 
-
-# sudo: required
-# dist: trusty
-# language: node_js
-# node_js:
-#   - "5"
-# before_install:
-#    - wget https://repo1.maven.org/maven2/org/wildfly/swarm/servers/keycloak/1.0.0.Beta7/keycloak-1.0.0.Beta7-swarm.jar
-# script: node test-ci.js
+sudo: required
+dist: trusty
+language: node_js
+node_js:
+  - "5"
+script: node test-ci.js
