@@ -3,6 +3,7 @@ coverage: tests
 
 tests: lint
 	npm test
+	npm run prepublish
 
 lint: node_modules
 	npm run lint

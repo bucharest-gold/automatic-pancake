@@ -11,7 +11,7 @@ test('B should b', t => {
       t.end();
     })
     .catch(e => {
-      console.log("ERROR ----> ", e);
+      console.error(e);
       t.fail();
     });
 });
@@ -20,4 +20,4 @@ module.exports = () => {
   return new Promise((resolve, reject) => {
     test.onFinish(resolve);
   });
-}
+};

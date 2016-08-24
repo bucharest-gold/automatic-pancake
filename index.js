@@ -3,15 +3,14 @@
 module.exports = {
   startServer: startServer,
   pull: pull
-}
+};
 
-const test = require('tape'),
-  spawn = require('child_process').spawn,
-  spawnSync = require('child_process').spawnSync,
-  path = require('path'),
-  fs = require('fs');
+const spawn = require('child_process').spawn;
+const spawnSync = require('child_process').spawnSync;
+const path = require('path');
+const fs = require('fs');
 
-function pull(image) {
+function pull (image) {
   spawnSync('docker', ['pull', image], { stdio: ['ignore', null, null] });
 }
 

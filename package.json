@@ -1,26 +1,33 @@
 {
-  "name": "poctravis",
+  "name": "automatic-pancake",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint": "jshint *.js lib/*.js test/**/*.js",
-    "test": "node --harmony_default_parameters test-ci.js",
-    "coverage": "istanbul cover tape -- test/**/**.js"
+    "lint": "eslint lib/*.js test/*.js index.js test-ci.js",
+    "test": "node test-ci.js",
+    "prepublish": "nsp check",
+    "coverage": "istanbul cover tape -- test/*.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/helio-frota/poctravis.git"
+    "url": "git+https://github.com/bucharest-gold/automatic-pancake.git"
   },
-  "author": "",
+  "author": "Helio Frota",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/helio-frota/poctravis/issues"
+    "url": "https://github.com/bucharest-gold/automatic-pancake/issues"
   },
-  "homepage": "https://github.com/helio-frota/poctravis#readme",
+  "homepage": "https://github.com/bucharest-gold/automatic-pancake#readme",
   "devDependencies": {
+    "eslint": "^3.3.1",
+    "eslint-config-semistandard": "^7.0.0-beta.0",
+    "eslint-config-standard": "^6.0.0",
+    "eslint-plugin-promise": "^2.0.1",
+    "eslint-plugin-react": "^6.1.2",
+    "eslint-plugin-standard": "^2.0.0",
     "istanbul": "^0.4.3",
-    "jshint": "^2.9.1",
+    "nsp": "^2.6.1",
     "tape": "^4.5.1"
   }
 }

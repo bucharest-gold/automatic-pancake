@@ -8,4 +8,4 @@ module.exports = () => {
     t.equal(a(), 'a');
     t.end();
   });
-}
+};
