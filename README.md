@@ -40,3 +40,7 @@ make integration
 make ci
 ./scripts/stop-server.sh
 ```
+
+## Contributing
+
+Please read the [contributing guide](./CONTRIBUTING.md)
