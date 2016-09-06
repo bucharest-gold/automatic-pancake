@@ -14,7 +14,7 @@
     "url": "git+https://github.com/bucharest-gold/automatic-pancake.git"
   },
   "author": "Helio Frota",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/bucharest-gold/automatic-pancake/issues"
   },
