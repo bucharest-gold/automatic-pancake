@@ -15,3 +15,28 @@ A kind of blank project.
 
 ## Usage
 
+```
+node index.js
+```
+
+## Running unit tests
+
+```
+make test
+```
+
+## Running integration tests
+
+```
+./scripts/start-server.sh
+make integration
+./scripts/stop-server.sh
+```
+
+## Running all tests
+
+```
+./scripts/start-server.sh
+make ci
+./scripts/stop-server.sh
+```
