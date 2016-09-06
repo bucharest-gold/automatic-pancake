@@ -1,4 +1,5 @@
-/node_modules
-/coverage
+node_modules
 npm-debug.log
 .vscode
+server.log
+wildfly-*

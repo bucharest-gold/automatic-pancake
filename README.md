@@ -1,48 +1,17 @@
 # automatic-pancake
 
 [![Build Status](https://travis-ci.org/bucharest-gold/automatic-pancake.svg?branch=master)](https://travis-ci.org/bucharest-gold/automatic-pancake)
+[![dependencies Status](https://david-dm.org/bucharest-gold/automatic-pancake/status.svg)](https://david-dm.org/bucharest-gold/automatic-pancake)
 
-Focus on ES6 features.
+A kind of blank project.
 
-**travis:**
+|                 | Project Info  |
+| --------------- | ------------- |
+| License:        | Apache-2.0 |
+| Build:          | make |
+| Documentation:  | N/A |
+| Issue tracker:  | https://github.com/bucharest-gold/automatic-pancake/issues |
+| Engines:        | Node.js 4.x, 5.x, 6.x |
 
-* Starting keycloak on travis-ci via node.
-* Running multiple test files with tape.
+## Usage
 
-**local:**
-* Using Makefile for automatic lint, tests, coverage.
-  
-
-### All tasks - local development:
-
-_keycloak running on port 8080 is required_
-
-```
-make
-```
-
-### Individual tasks - local development:
-
-```
-npm run lint
-```
-
-```
-npm test
-```
-
-```
-npm run coverage
-```
-
-### CI:
-
-CI will use node instead Makefile.
-
-### Simulating CI tests locally: 
-
-_keycloak on current directory is required_
-
-```
-node test-ci.js
-```

@@ -1,17 +1,19 @@
-coverage: tests
-	npm run coverage
+ci: test
+	npm run integration
 
-tests: lint
-	npm test
-	npm run prepublish
+integration: lint
+	npm run integration
+
+test: lint
+	npm run test
 
 lint: node_modules
 	npm run lint
 
-cleanup:
-	rm -rf coverage
+clean:
+	rm -rf node_modules
 
-node_modules: cleanup package.json
+node_modules: package.json
 	npm install
 
 .PHONY: node_modules

@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint lib/*.js test/*.js index.js test-ci.js",
-    "test": "node test-ci.js",
-    "prepublish": "nsp check",
-    "coverage": "istanbul cover tape -- test/*.js"
+    "lint": "eslint lib/*.js test/*.js index.js",
+    "test": "tape test/unit/*.js | tap-spec",
+    "integration": "tape test/integration/*.js | tap-spec",
+    "prepublish": "nsp check"
   },
   "repository": {
     "type": "git",
@@ -28,6 +28,10 @@
     "eslint-plugin-standard": "^2.0.0",
     "istanbul": "^0.4.3",
     "nsp": "^2.6.1",
+    "tap-spec": "^4.1.1",
     "tape": "^4.5.1"
+  },
+  "dependencies": {
+    "roi": "^0.12.1"
   }
 }
