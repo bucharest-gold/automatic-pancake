@@ -8,7 +8,7 @@
     "test": "tape test/unit/*.js | tap-spec",
     "integration": "tape test/integration/*.js | tap-spec",
     "prepublish": "nsp check",
-    "coverage": "istanbul cover tape -- test/unit/*.js"
+    "coverage": "istanbul cover tape test/integration/*.js tape test/unit/*.js"
   },
   "repository": {
     "type": "git",
