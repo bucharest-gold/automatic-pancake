@@ -6,6 +6,7 @@ node_js:
   - "5"
   - "6"
 before_script:
+  - npm install -g coveralls
   - ./scripts/start-server.sh
 script:
   - make ci
@@ -16,3 +17,5 @@ branches:
     - master
 notifications:
   irc: "irc.freenode.org#brass-monkey"
+after_success:
+  - cat ./coverage/lcov.info | coveralls
