@@ -1,5 +1,6 @@
 # automatic-pancake
 
+[![Coverage Status](https://coveralls.io/repos/github/bucharest-gold/automatic-pancake/badge.svg?branch=master)](https://coveralls.io/github/bucharest-gold/automatic-pancake?branch=master)
 [![Build Status](https://travis-ci.org/bucharest-gold/automatic-pancake.svg?branch=master)](https://travis-ci.org/bucharest-gold/automatic-pancake)
 [![dependencies Status](https://david-dm.org/bucharest-gold/automatic-pancake/status.svg)](https://david-dm.org/bucharest-gold/automatic-pancake)
 
