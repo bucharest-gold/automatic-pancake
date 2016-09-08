@@ -1,5 +1,6 @@
 ci: test
 	npm run integration
+	npm run coverage
 
 integration: lint
 	npm run integration
